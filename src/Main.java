@@ -1,12 +1,14 @@
 import java.util.*;
 public class Main {
 
-    static void firstHeight() {
+    static void firstCalculation() {
         System.out.println("Please enter the first height: ");
-    }
-
-    static void firstWidth() {
+        Scanner userInput = new Scanner(System.in); // scanner input
+        int height1 = userInput.nextInt(); // waiting for user Input (integer)
         System.out.println("Please enter the first width: ");
+        int width1 = userInput.nextInt();// waiting for user Input (integer)
+        int rectArea = width1 * height1; // calculating the rectangle area
+        System.out.printf("Area of rectangle = %d cm²",rectArea); // printing the calculated area of the rectangle
     }
 
     static void calculateRectArea(Integer width1, Integer height1, Integer width2, Integer height2) {
@@ -28,15 +30,10 @@ public class Main {
     public static void main(String[] args) {
         int waitTime = 5000; // 5000ms = 5s change it to your liking, if you don't want a pause between the examples just put a 0 in it =).
 
-
         System.out.println("\nThis is a program to calculate different types of shapes.\n\nCode Review 1/2. \"calculate the rectangular area.\"\n"); // just a print
-        Scanner userInput = new Scanner(System.in); // scanner input
-        firstHeight(); // calling method for "first height"
-        int height1 = userInput.nextInt(); // waiting for user Input (integer)
-        firstWidth(); // calling method for "first width"
-        int width1 = userInput.nextInt();// waiting for user Input (integer)
-        int rectArea = width1 * height1; // calculating the rectangle area
-        System.out.println("Area of rectangle = "+rectArea+" cm²"); // printing the calculated area of the rectangle
+
+        firstCalculation();
+
         try {
             Thread.sleep(waitTime); // waiting time
         } catch (InterruptedException ignored) {
